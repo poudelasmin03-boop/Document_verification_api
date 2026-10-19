@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from router.user import router as user_router
+from router.upload_document import router as request_document
 
 app = FastAPI()
 
@@ -18,6 +19,7 @@ app.add_middleware(
 
 
 app.include_router(user_router)
+app.include_router(request_document)
 
 
 @app.get("/")

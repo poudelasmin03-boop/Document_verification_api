@@ -35,3 +35,7 @@ class DbUpload(Base):
     username = Column(String, nullable=False)
     document = Column(VARCHAR(300), nullable=False)
     user_id = Column(Integer, ForeignKey("Users.id"))
+    create_at = Column(DateTime(timezone=True), default=lambda: datetime.now(UTC))
+
+
+### Document verify by Admin
